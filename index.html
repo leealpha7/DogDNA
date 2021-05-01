@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>DOG DNA TEST</title>
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+			crossorigin="anonymous"
+		/>
+
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8822631118346070"
+			crossorigin="anonymous"
+		></script>
+
+		<link rel="stylesheet" href="style.css" />
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#"></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+				</li>
+			</ul>
+		</div>
+		<section class="section">
+			<h1 class="title">Dog Ancestry TEST</h1>
+			<h2 class="subtitle">Check Your Dog's DNA</h2>
+		</section>
+
+		<script
+			class="jsbin"
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+		></script>
+		<div class="container file-upload">
+			<div class="image-upload-wrap">
+				<input
+					class="file-upload-input"
+					type="file"
+					onchange="readURL(this);"
+					accept="image/*"
+				/>
+				<div class="drag-text">
+					<h3 class="mb-5 pb-5 upload-text">Take a picture or select add Image</h3>
+				</div>
+			</div>
+			<div class="file-upload-content">
+				<img class="file-upload-image" id="face-image" src="#" alt="your image" />
+				<div id="loading" class="animated bounce">
+					<div class="spinner-border" role="status">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+				<p class="result-message"></p>
+				<div id="label-container"></div>
+
+				<!-- Go to www.addthis.com/dashboard to customize your tools -->
+				<div class="addthis_inline_share_toolbox"></div>
+
+				<div class="image-title-wrap">
+					<button type="button" onclick="removeUpload()" class="remove-image">
+						Try Other Picture <span class=""></span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="webcam-container"></div>
+		<div id="label-container"></div>
+
+		<!-- <script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+			crossorigin="anonymous"
+		></script> -->
+
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+		<script>
+			function readURL(input) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function (e) {
+						$('.image-upload-wrap').hide();
+						$('#loading').show();
+						$('.file-upload-image').attr('src', e.target.result);
+						$('.file-upload-content').show();
+						$('.image-title').html(input.files[0].name);
+					};
+					reader.readAsDataURL(input.files[0]);
+					init().then(() => {
+						console.log('hello');
+						predict();
+						$('#loading').hide();
+					});
+				} else {
+					removeUpload();
+				}
+			}
+			function removeUpload() {
+				$('.file-upload-input').replaceWith($('.file-upload-input').clone());
+				$('.file-upload-content').hide();
+				$('.image-upload-wrap').show();
+			}
+			$('.image-upload-wrap').bind('dragover', function () {
+				$('.image-upload-wrap').addClass('image-dropping');
+			});
+			$('.image-upload-wrap').bind('dragleave', function () {
+				$('.image-upload-wrap').removeClass('image-dropping');
+			});
+		</script>
+
+		<div id="disqus_thread"></div>
+
+		<script>
+			/**
+			 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+			/*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+			(function () {
+				// DON'T EDIT BELOW THIS LINE
+				var d = document,
+					s = d.createElement('script');
+				s.src = 'https://leealpha.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+			})();
+		</script>
+		<noscript
+			>Please enable JavaScript to view the
+			<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript
+		>
+
+		<script type="text/javascript">
+			// More API functions here:
+			// https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+			// the link to your model provided by Teachable Machine export panel
+			const URL = 'https://teachablemachine.withgoogle.com/models/qghA6YNck/';
+
+			let model, webcam, labelContainer, maxPredictions;
+
+			// Load the image model and setup the webcam
+			async function init() {
+				const modelURL = URL + 'model.json';
+				const metadataURL = URL + 'metadata.json';
+
+				// load the model and metadata
+				// Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+				// or files from your local hard drive
+				// Note: the pose library adds "tmImage" object to your window (window.tmImage)
+				model = await tmImage.load(modelURL, metadataURL);
+				maxPredictions = model.getTotalClasses();
+				labelContainer = document.getElementById('label-container');
+				for (let i = 0; i < maxPredictions; i++) {
+					// and class labels
+					labelContainer.appendChild(document.createElement('div'));
+				}
+			}
+
+			// run the webcam image through the image model
+			async function predict() {
+				// predict can take in an image, video or canvas html element
+				var image = document.getElementById('face-image');
+				const prediction = await model.predict(image, false);
+				prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+				console.log(prediction[0].className);
+				var resultMessage;
+				switch (prediction[0].className) {
+					case 'American PitBull Terrier':
+						resultMessage = 'Are you a Michelin Star Chef? wow!';
+						break;
+					case 'Cane Corso':
+						resultMessage = 'Are you a Michelin Star Chef? wow!';
+						break;
+					case 'Samoyed':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Sarabi Dog':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Toy Poodle':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Jack Russell Terrier':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Miniature Pinscher':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Labrado odle':
+						resultMessage = 'Restaurant Quality meal! Good on you!';
+						break;
+					case 'Yorkshire Terrier':
+						resultMessage = 'Brunch time? Cafe Style dish.';
+						break;
+					case 'Korean Jindo':
+						resultMessage = 'Did your Kid cook this?';
+						break;
+					case 'German Shepherd':
+						resultMessage = 'This may not be food.';
+						break;
+					case 'Bull Dog':
+						resultMessage = 'Are you a Michelin Star Chef? wow!';
+						break;
+					case 'Retriever':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Poodle':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Chihuahua':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Dachshund':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Siberian Husky':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Rottweiler':
+						resultMessage = 'Restaurant Quality meal! Good on you!';
+						break;
+					case 'Greyhound':
+						resultMessage = 'Brunch time? Cafe Style dish.';
+						break;
+					case 'Pomeranian':
+						resultMessage = 'Did your Kid cook this?';
+						break;
+					case 'Shih Tzu':
+						resultMessage = 'This may not be food.';
+						break;
+					case 'Dobermann':
+						resultMessage = 'Are you a Michelin Star Chef? wow!';
+						break;
+					case 'Maltese dog':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Bernese Mountain Dog':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Pembroke Welsh Corgi':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Border Collie':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Cavalier King Charles Spaniel':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Bichon Frise':
+						resultMessage = 'Restaurant Quality meal! Good on you!';
+						break;
+					case 'Bull Terrier':
+						resultMessage = 'Brunch time? Cafe Style dish.';
+						break;
+					case 'Alaskan Malamute':
+						resultMessage = 'Did your Kid cook this?';
+						break;
+					case 'Chow Chow':
+						resultMessage = 'This may not be food.';
+						break;
+					case 'Basset Hound':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'St. Bernard':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'English Cocker Spaniel':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Chinese Crested Dog':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Afghan Hound':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Dalmatian':
+						resultMessage = 'Fine Dining quality dish! Good Job!';
+						break;
+					case 'Airedale Terrier':
+						resultMessage = 'Restaurant Quality meal! Good on you!';
+						break;
+					case 'Shiba Inu':
+						resultMessage = 'Brunch time? Cafe Style dish.';
+						break;
+					case 'French Bulldog':
+						resultMessage = 'Did your Kid cook this?';
+						break;
+					case 'Boston Terrier':
+						resultMessage = 'This may not be food.';
+						break;
+				}
+				$('.result-message').html(resultMessage);
+				for (let i = 0; i < maxPredictions; i++) {
+					const classPrediction =
+						prediction[i].className +
+						' : ' +
+						prediction[i].probability.toFixed(2) * 100 +
+						'%';
+					labelContainer.childNodes[i].innerHTML = classPrediction;
+				}
+			}
+		</script>
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<script
+			type="text/javascript"
+			src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6086300d6136ec5a"
+		></script>
+	</body>
+	<!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of  charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+</html>
