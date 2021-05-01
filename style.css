@@ -1,9 +1,9 @@
 body {
 	margin: 15px;
 	font-family: 'Jua', sans-serif;
-	background-color: #FFC1D8;
+	background-color: #6C757B;
 	box-sizing: border-box;
-	color: #35465d;
+	color: #6C757D;
 	font-size: initial;
 	}
 .file-upload {
@@ -130,13 +130,13 @@ body {
 .title {
 	line-height: 1.67;
 	text-align: center;
-	color: #6610f2;
+	color: #f8f9fa;
 	-webkit-: medium;
 }
 .subtitle {
 	line-height: 1.53;
 	text-align: center;
-	color: #6c757d;
+	color: #F8F9D1;
 	-webkit-: medium;
 } /* On screens that are 600px or less, set
 the background color to olive */
