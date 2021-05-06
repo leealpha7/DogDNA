@@ -63,6 +63,8 @@ body {
 	border-radius: 30px;
 	border: dashed 1.5px #35465d;
 	background-color: #ffffff;
+	padding-bottom: 20px;
+    padding-top: 20px;
 }
 .image-dropping,
 .image-upload-wrap:hover {
@@ -155,6 +157,8 @@ the background color to olive */
 	border-radius: 10px;
 	border: solid 1.5px #f6f7fa;
 	background-color: #f6f7fa;
+	padding-top: 130px;
+    padding-bottom: 130px;
 }
 .upload-text {
 	width: 58%;
