@@ -157,8 +157,13 @@ the background color to olive */
 	border-radius: 10px;
 	border: solid 1.5px #f6f7fa;
 	background-color: #f6f7fa;
+<<<<<<< HEAD
+	padding-top: 90px;
+    padding-bottom: 90px;
+=======
 	padding-top: 130px;
     padding-bottom: 130px;
+>>>>>>> a25ae215a782433496acc21b4fd79d5d4182b794
 }
 .upload-text {
 	width: 58%;
@@ -173,7 +178,7 @@ the background color to olive */
 #label-container {
     width: 80%;
     margin: 0 auto;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	
 }
 .result-message {
