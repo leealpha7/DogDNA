@@ -67,10 +67,12 @@
 						<span class="sr-only"></span>
 					</div>
 				</div>
+
 				<p class="result-message"></p>
 				<div id="label-container"></div>
 
-				
+									<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+		<div class="addthis_inline_share_toolbox"></div>
 
 				<div class="image-title-wrap">
 					<button type="button" onclick="removeUpload()" class="remove-image">
@@ -80,10 +82,11 @@
 			</div>
 		</div>
 		<div id="webcam-container"></div>
+		
+		
 		<div id="label-container"></div>
 		
-		<!-- Go to www.addthis.com/dashboard to customize your tools --> 
-		<div class="addthis_inline_share_toolbox"></div>
+	
 
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
@@ -121,7 +124,37 @@
 			});
 		</script>
 		
+		<div id="disqus_thread"></div>
+
+		<script>
+			/**
+			 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+			/*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+			(function () {
+				// DON'T EDIT BELOW THIS LINE
+				var d = document,
+					s = d.createElement('script');
+				s.src = 'https://leealpha.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+			})();
+		</script>
+		<noscript
+			>Please enable JavaScript to view the
+			<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript
+		>
+
 		<script type="text/javascript">
+			// More API functions here:
+			// https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+			// the link to your model provided by Teachable Machine export panel
 			
 			const URL = 'https://teachablemachine.withgoogle.com/models/qghA6YNck/';
 
@@ -296,3 +329,4 @@ Permission is hereby granted, free of  charge, to any person obtaining a copy of
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
 </html>
+© 2021 GitHub, Inc.

@@ -117,21 +117,15 @@ body {
 .navbar-light .navebar-toggler {
 	border-color: #ffffff;
 }
-.section {
-	margin-top: 30px;
-}
+
 .title {
+	margin-bottom: 0px;
 	line-height: 1.67;
 	font-size: 25px;
 	text-align: center;
 	color: #f8f9fa;
 	-webkit-: medium;
-}
-.subtitle {
-	line-height: 1.53;
-	text-align: center;
-	color: #F8F9D1;
-	-webkit-: medium;
+
 } /* On screens that are 600px or less, set
 the background color to olive */
 @media screen and (max-width: 600px) {
@@ -150,8 +144,8 @@ the background color to olive */
 	background-color: #f6f7fa;
 	padding-top: 90px;
     padding-bottom: 90px;
-	padding-top: 80px;
-    padding-bottom: 80px;
+	padding-top: 40px;
+    padding-bottom: 40px;
 
 }
 .upload-text {
